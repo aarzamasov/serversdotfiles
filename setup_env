@@ -1,0 +1,13 @@
+ZSH_THEME="powerlevel9k/powerlevel9k"
+USER_HOME="$(echo -n $(bash -c "cd ~${USER} && pwd"))"
+WHERE_OPT="$USER_HOME/opt"
+WHERE_SERVERSDOTFILES="$WHERE_OPT/serversdotfiles"
+
+source $WHERE_SERVERSDOTFILES/bash_aliases
+export PATH=$PATH:$WHERE_OPT/bin
+export PATH=$PATH:/Users/art/Library/Python/2.7/bin
+##ssh-add ~/.ssh/batman >/dev/null 2>&1
+export ANSIBLE_CONFIG=$WHERE_OPT/ansible/ansible.cfg
+unset USER_HOME
+unset WHERE_OPT
+unset WHERE_SERVERSDOTFILES
