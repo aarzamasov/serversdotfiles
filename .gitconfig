@@ -1,0 +1,51 @@
+[user]
+	name = ______ 
+	email = _________
+[core]
+	excludesfile = /Users/____/.gitignore
+  editor = 'code' --wait
+[diff]
+  tool = meld
+[difftool]
+  prompt = false
+[difftool "meld"]
+  cmd = meld "$LOCAL" "$REMOTE"
+[merge]
+	tool = meld
+[mergetool "meld"]
+  cmd = meld "$BASE" "$LOCAL" "$REMOTE" --output "$MERGED"
+[init]
+	templateDir = /Users/aarzamasov/.git-template
+[Alias]
+  lg = log --graph --pretty=format:'%Cred%h%Creset %ad %s %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --date=short
+  hist = log --graph --full-history --all --pretty=format:'%Cred%h%Creset %ad %s %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --date=short
+
+   # one-line log
+  l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+
+  a = add
+  ap = add -p
+  c = commit --verbose
+  ca = commit -a --verbose
+  cm = commit -m
+  cam = commit -a -m
+  m = commit --amend --verbose
+
+  d = diff
+  ds = diff --stat
+  dc = diff --cached
+
+  s = status -s
+  co = checkout
+  cob = checkout -b
+  
+  # list branches sorted by last modified
+  b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+  
+  # list aliases
+  la = "!git config -l | grep alias | cut -c 7-"
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
