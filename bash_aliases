@@ -11,14 +11,6 @@
  alias vpn-f50-dev='nohup sudo $OPENVPN $VPNPATH/clients/f50/vpn/f50-dev.ovpn &'
  alias ehosts='sudo vim /etc/hosts'
 
-## git aliases
- alias gs='git status'
- alias gp='git pull'
- alias gph='git push'
- alias ga='git add'
- alias grm='git rm'
- alias glo='git log --oneline'
-
 alias c='clear'
 alias hig='history | grep'
 alias psg='ps aux | grep'

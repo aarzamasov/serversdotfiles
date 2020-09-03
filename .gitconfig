@@ -18,11 +18,10 @@
 	templateDir = /Users/aarzamasov/.git-template
 [Alias]
   lg = log --graph --pretty=format:'%Cred%h%Creset %ad %s %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --date=short
+  l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
   hist = log --graph --full-history --all --pretty=format:'%Cred%h%Creset %ad %s %C(yellow)%d%Creset %C(bold blue)<%an>%Creset' --date=short
 
-   # one-line log
-  l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
-
+  # alias
   a = add
   ap = add -p
   c = commit --verbose
@@ -30,11 +29,16 @@
   cm = commit -m
   cam = commit -a -m
   m = commit --amend --verbose
+  p = git pull
+  ph = git push
 
   d = diff
   ds = diff --stat
   dc = diff --cached
 
+  ## git aliases
+
+  
   s = status -s
   co = checkout
   cob = checkout -b
@@ -44,6 +48,7 @@
   
   # list aliases
   la = "!git config -l | grep alias | cut -c 7-"
+
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
