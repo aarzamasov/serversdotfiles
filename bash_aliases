@@ -13,8 +13,8 @@
 
 ## git aliases
  alias gs='git status'
- alias gpl='git pull'
- alias gp='git push'
+ alias gp='git pull'
+ alias gph='git push'
  alias ga='git add'
  alias grm='git rm'
  alias glo='git log --oneline'
